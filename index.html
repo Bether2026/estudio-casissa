@@ -161,6 +161,26 @@ body.menu .bar .brand{opacity:0;pointer-events:none}
 .seal .txt{position:absolute;inset:0;animation:spin 50s linear infinite}
 .seal .txt text{font-family:var(--serif);font-size:11px;letter-spacing:4px;fill:var(--gold)}
 @keyframes spin{to{transform:rotate(360deg)}}
+/* marca de agua: estatua de la Justicia detrás del inicio */
+.hero .wm{position:absolute;top:2%;bottom:0;left:46%;transform:translateX(-50%) scale(1.04);aspect-ratio:764/1440;background:url(img/justicia.png) center top/contain no-repeat;opacity:0;pointer-events:none;
+  -webkit-mask-image:linear-gradient(#000 55%,transparent 98%);mask-image:linear-gradient(#000 55%,transparent 98%);transition:opacity 2.4s ease .3s,transform 3s cubic-bezier(.2,.7,.2,1) .3s}
+.view.on .hero .wm{opacity:.085;transform:translateX(-50%) scale(1)}
+/* medallón con balanza */
+.seal{max-width:420px}
+.seal .halo{position:absolute;inset:-12%;border-radius:50%;background:radial-gradient(closest-side,rgba(201,164,92,.20),rgba(201,164,92,.06) 55%,transparent 75%);filter:blur(6px);animation:breathe 7s ease-in-out infinite}
+@keyframes breathe{0%,100%{opacity:.7;transform:scale(.97)}50%{opacity:1;transform:scale(1.03)}}
+.seal .ring{background:radial-gradient(circle at 50% 32%,#2c241a,#120f0c 62%,#0b0a09);border:1px solid rgba(236,213,159,.45);
+  box-shadow:inset 0 0 0 10px rgba(11,10,9,.55),inset 0 0 0 11px rgba(216,184,120,.32),inset 0 30px 60px rgba(255,230,170,.06),inset 0 -40px 70px rgba(0,0,0,.6),0 40px 80px -30px #000,0 0 60px -10px rgba(201,164,92,.25);overflow:hidden}
+.seal .ring::before{inset:16%;border:1px solid rgba(216,184,120,.18);border-style:solid}
+.seal .ring::after{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,transparent 0 70%,rgba(255,238,195,.16) 80%,transparent 90%);animation:spin 9s linear infinite}
+.seal .txt text{font-size:9.6px;letter-spacing:3.2px;fill:#d8b878}
+.seal svg.scale{inset:21%;width:58%;height:58%;filter:drop-shadow(0 8px 18px rgba(0,0,0,.6)) drop-shadow(0 0 14px rgba(236,213,159,.28))}
+.seal svg.scale g.sw{transform-origin:60px 26px;animation:sway 6s ease-in-out 2.6s infinite}
+.seal svg.scale .pan{animation:counter 6s ease-in-out 2.6s infinite}
+.seal svg.scale .pan.l{transform-origin:20px 28px}.seal svg.scale .pan.r{transform-origin:100px 28px}
+@keyframes counter{0%,100%{transform:rotate(3deg)}50%{transform:rotate(-3deg)}}
+.seal svg.scale .fill,.seal svg.scale .dot{opacity:0;transition:opacity 1.2s ease 2s}
+.view.on .seal svg.scale .fill,.view.on .seal svg.scale .dot{opacity:1}
 .marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2);position:relative;z-index:2}
 .marquee div{display:flex;gap:60px;width:max-content;padding:22px 0;animation:mq 40s linear infinite}
 .marquee span{font-family:var(--serif);font-size:clamp(1.2rem,2.4vw,1.7rem);letter-spacing:.12em;color:#d9cdb3;white-space:nowrap;display:flex;align-items:center;gap:60px}
@@ -338,8 +358,11 @@ footer .by a{color:var(--gold-2);text-decoration:underline}
   .burger{display:grid}
   .hero{min-height:0;padding:40px 0 60px}
   .hero-grid,.about-grid,.c-grid,.calc-grid,.cband,.news-feat{grid-template-columns:1fr}
-  .seal{max-width:300px;margin:0 auto}
+  
   .figure{height:auto;width:min(78vw,340px);margin:10px auto 0}
+  .seal{max-width:none;width:min(62vw,250px);margin:6px auto 0}
+  .hero .wm{left:72%;top:0;height:92%;bottom:auto}
+  .view.on .hero .wm{opacity:.075}
   .justice{opacity:.1;right:-20vw;top:140px;height:80vh}
   .tiles{grid-template-columns:1fr 1fr}
   .tile,.tile.w3{grid-column:span 1;min-height:200px}
@@ -403,6 +426,7 @@ footer .by a{color:var(--gold-2);text-decoration:underline}
 <!-- ══════════ INICIO ══════════ -->
 <div class="view on" id="v-inicio" data-t="Inicio">
   <section class="hero">
+    <div class="wm" aria-hidden="true"></div>
     <canvas id="dust"></canvas>
     <div class="wrap hero-grid">
       <div>
@@ -423,9 +447,26 @@ footer .by a{color:var(--gold-2);text-decoration:underline}
           <span><i class="ic3d xs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><path d="M12 21s7-6.2 7-11.5a7 7 0 0 0-14 0C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></i>Senzabello 209</span>
         </div>
       </div>
-      <div class="figure" aria-hidden="true">
-        <div class="img"></div><div class="glint"></div>
-        <div class="cap rv d3"><svg class="emblem" viewBox="0 0 64 64" fill="none" stroke="#ecd59f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path class="draw" style="--len:60" d="M32 8v46M22 56h20"/><circle class="draw" style="--len:16" cx="32" cy="8" r="2.4"/><g class="sw"><path class="draw" style="--len:40" d="M12 13h40"/><path class="draw" style="--len:60" d="M14 13 6 31h16zM50 13l-8 18h16z"/><path class="draw" style="--len:40" d="M6 31a8 4 0 0 0 16 0M42 31a8 4 0 0 0 16 0"/></g></svg>Justicia, con compromiso</div>
+      <div class="seal rv d2" aria-hidden="true">
+        <div class="halo"></div>
+        <div class="ring"></div>
+        <svg class="txt" viewBox="0 0 200 200"><defs><path id="cp" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs><text><textPath href="#cp" textLength="498" lengthAdjust="spacing">ESTUDIO JURÍDICO ✦ DRA. ANDREA G. DE CASISSA ✦</textPath></text></svg>
+        <svg class="scale" viewBox="0 0 120 120" fill="none" stroke="url(#gg)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <defs>
+            <linearGradient id="gg" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="100" y2="110"><stop offset="0" stop-color="#fff1c9"/><stop offset=".45" stop-color="#e2c07a"/><stop offset="1" stop-color="#9b7a3c"/></linearGradient>
+            <linearGradient id="gf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ecd59f" stop-opacity=".55"/><stop offset="1" stop-color="#9b7a3c" stop-opacity=".15"/></linearGradient>
+          </defs>
+          <path class="draw" style="--len:80" d="M60 24v72"/>
+          <path class="draw" style="--len:70" d="M40 101h40M47 96.5h26"/>
+          <path class="draw" style="--len:40" d="M53 96.5c2-6 3-10 7-12 4 2 5 6 7 12"/>
+          <circle class="draw" style="--len:30" cx="60" cy="18" r="4.2"/>
+          <g class="sw">
+            <path class="draw" style="--len:90" d="M20 28q40-7 80 0"/>
+            <circle cx="20" cy="28" r="1.9" fill="#ecd59f" stroke="none" class="dot"/><circle cx="100" cy="28" r="1.9" fill="#ecd59f" stroke="none" class="dot"/>
+            <g class="pan l"><path class="draw" style="--len:80" d="M20 28 9 60M20 28l11 32"/><path class="fill" d="M7 60a13 6.5 0 0 0 26 0z" fill="url(#gf)"/><path class="draw" style="--len:70" d="M7 60a13 6.5 0 0 0 26 0z"/></g>
+            <g class="pan r"><path class="draw" style="--len:80" d="M100 28 89 60M100 28l11 32"/><path class="fill" d="M87 60a13 6.5 0 0 0 26 0z" fill="url(#gf)"/><path class="draw" style="--len:70" d="M87 60a13 6.5 0 0 0 26 0z"/></g>
+          </g>
+        </svg>
       </div>
     </div>
   </section>
