@@ -214,7 +214,9 @@ body.menu .bar .brand{opacity:0;pointer-events:none}
 .ic3d.xs{width:30px;height:30px;border-radius:50%}
 .ic3d.xs::before{inset:3px;border-radius:50%}
 .ic3d.xs svg{width:56%;height:56%;stroke-width:2.2}
-.trust span{gap:10px}
+.trust span{gap:10px;white-space:nowrap}
+.trust{gap:18px 26px}
+@media (max-width:960px){.trust{display:grid;grid-template-columns:1fr 1fr;gap:16px 14px;font-size:.84rem}}
 .tile .ic3d{width:58px;height:58px;border-radius:18px}
 .tile .ic3d::before{border-radius:13px}
 .tile small{margin-left:auto;margin-right:62px;align-self:flex-start}
@@ -287,7 +289,7 @@ body.menu .bar .brand{opacity:0;pointer-events:none}
 .qa .ans p{padding-bottom:22px}
 .sub-h{display:flex;align-items:baseline;gap:16px;margin-top:80px}
 .sub-h h3{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:600}
-.sub-h span{flex:1;height:1px;background:var(--line)}
+.sub-h>span{flex:1;height:1px;background:var(--line)}
 
 /* ─── NOVEDADES ─── */
 .news-feat{display:grid;grid-template-columns:1.3fr 1fr;gap:20px}
@@ -304,6 +306,20 @@ body.menu .bar .brand{opacity:0;pointer-events:none}
 .nc p{color:var(--muted);font-size:.92rem;margin-top:8px;flex:1}
 .nc .more{margin-top:16px;font-weight:800;font-size:.84rem;color:var(--gold-2)}
 .news-side{display:grid;gap:20px}
+.news-list{display:grid;gap:14px}
+.nrow{position:relative;display:grid;grid-template-columns:auto 1fr auto;gap:26px;align-items:center;width:100%;text-align:left;padding:24px 30px;border-radius:22px;border:1px solid var(--line);background:linear-gradient(170deg,#1a1713,#100e0c);color:inherit;font:inherit;cursor:pointer;overflow:hidden;transition:border-color .4s,transform .4s}
+.nrow::before{content:"";position:absolute;left:0;top:22%;bottom:22%;width:2px;border-radius:2px;background:linear-gradient(var(--gold-2),var(--gold-3));opacity:0;transition:opacity .4s}
+.nrow:hover{border-color:var(--line2);transform:translateX(4px)}
+.nrow:hover::before{opacity:1}
+.nrow .tx small{display:block;color:var(--muted);font-size:.74rem;font-weight:700;letter-spacing:.06em}
+.nrow .tx small b{color:var(--gold);letter-spacing:.2em;text-transform:uppercase;font-size:.7rem}
+.nrow h3{font-family:var(--serif);font-weight:600;font-size:clamp(1.15rem,2vw,1.45rem);line-height:1.2;margin-top:6px}
+.nrow p{color:var(--muted);font-size:.9rem;margin-top:6px}
+.nrow .go{white-space:nowrap;font-weight:800;font-size:.84rem;color:var(--gold-2);padding:11px 18px;border-radius:999px;border:1px solid var(--line2);transition:background .3s,color .3s}
+.nrow .go em{font-style:normal;display:inline-block;transition:transform .3s}
+.nrow:hover .go{background:var(--gold);color:var(--ink)}
+.nrow:hover .go em{transform:translateX(4px)}
+@media (max-width:960px){.nrow{grid-template-columns:auto 1fr;gap:14px 16px;padding:20px;align-items:start}.nrow .ic3d{width:46px;height:46px;border-radius:14px}.nrow .ic3d svg{width:22px;height:22px}.nrow .go{grid-column:1 / -1;justify-self:start;padding:9px 16px}}
 .note{margin-top:24px;font-size:.8rem;color:var(--muted);text-align:center;opacity:.8}
 .modal{position:fixed;inset:0;z-index:95;display:grid;place-items:center;padding:20px;background:rgba(0,0,0,.65);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .3s}
 .modal.open{opacity:1;pointer-events:auto}
@@ -426,7 +442,6 @@ footer .by a{color:var(--gold-2);text-decoration:underline}
 <!-- ══════════ INICIO ══════════ -->
 <div class="view on" id="v-inicio" data-t="Inicio">
   <section class="hero">
-    <div class="wm" aria-hidden="true"></div>
     <canvas id="dust"></canvas>
     <div class="wrap hero-grid">
       <div>
@@ -444,6 +459,7 @@ footer .by a{color:var(--gold-2);text-decoration:underline}
         <div class="trust rv d4">
           <span><i class="ic3d xs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></i>Confidencialidad</span>
           <span><i class="ic3d xs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></i>Respuesta rápida</span>
+          <span><i class="ic3d xs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg></i>Trato personalizado</span>
           <span><i class="ic3d xs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><path d="M12 21s7-6.2 7-11.5a7 7 0 0 0-14 0C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></i>Senzabello 209</span>
         </div>
       </div>
@@ -591,12 +607,10 @@ footer .by a{color:var(--gold-2);text-decoration:underline}
     <p class="lead rv">Consejos, cambios en las leyes y novedades del estudio. Se actualiza todas las semanas.</p>
   </div></section>
   <section class="sec" style="padding-top:0"><div class="wrap">
-    <div class="news-feat">
-      <button class="nc big rv" data-n="0"><span class="cv" style="--c:radial-gradient(80% 100% at 70% 0,#4a3a22,#14110d)"><span>Laboral · Destacada</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span><span class="bd"><small>Ejemplo de novedad · 17 nov</small><h3>Me despidieron: ¿qué tengo que hacer primero?</h3><p>Los primeros pasos importan. Te contamos qué documentación guardar y por qué no firmar nada sin asesorarte.</p><span class="more">Leer nota →</span></span></button>
-      <div class="news-side">
-        <button class="nc rv d1" data-n="1"><span class="cv" style="--c:linear-gradient(135deg,#1b1814,#3a2f1e)"><span>Tránsito</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 16h14l-1.5-5.5A2 2 0 0 0 15.6 9H8.4a2 2 0 0 0-1.9 1.5z"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/></svg></span><span class="bd"><small>Ejemplo de novedad · 10 nov</small><h3>Tuve un choque: 5 cosas que no podés olvidar</h3><span class="more">Leer nota →</span></span></button>
-        <button class="nc rv d2" data-n="2"><span class="cv" style="--c:linear-gradient(135deg,#1e1a14,#33291b)"><span>Familia</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="7" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 20c0-2.4 1.4-4.5 3.5-4.5S21 17.6 21 20"/></svg></span><span class="bd"><small>Ejemplo de novedad · 3 nov</small><h3>Cuota alimentaria: cómo se reclama</h3><span class="more">Leer nota →</span></span></button>
-      </div>
+    <div class="news-list">
+      <button class="nrow rv" data-n="0"><i class="ic3d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></i><span class="tx"><small><b>Laboral</b> · Ejemplo de novedad · 17 nov</small><h3>Me despidieron: ¿qué tengo que hacer primero?</h3><p>Los primeros pasos importan: qué documentación guardar y por qué no firmar nada sin asesorarte.</p></span><span class="go">Leer nota <em>→</em></span></button>
+      <button class="nrow rv d1" data-n="1"><i class="ic3d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16h14l-1.5-5.5A2 2 0 0 0 15.6 9H8.4a2 2 0 0 0-1.9 1.5z"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/></svg></i><span class="tx"><small><b>Tránsito</b> · Ejemplo de novedad · 10 nov</small><h3>Tuve un choque: 5 cosas que no podés olvidar</h3><p>Datos, fotos, denuncia al seguro y plazos: lo que conviene hacer en las primeras horas.</p></span><span class="go">Leer nota <em>→</em></span></button>
+      <button class="nrow rv d2" data-n="2"><i class="ic3d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="7" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 20c0-2.4 1.4-4.5 3.5-4.5S21 17.6 21 20"/></svg></i><span class="tx"><small><b>Familia</b> · Ejemplo de novedad · 3 nov</small><h3>Cuota alimentaria: cómo se reclama</h3><p>Quién puede pedirla, cómo se calcula y qué hacer si no se cumple.</p></span><span class="go">Leer nota <em>→</em></span></button>
     </div>
     <p class="note">Estas novedades son ejemplos ilustrativos para la demo. En la página real, el estudio publica sus propios contenidos.</p>
     <div class="cband rv" data-cb="novedades"></div>
@@ -737,7 +751,7 @@ footer .by a{color:var(--gold-2);text-decoration:underline}
     {c:'Familia',t:'Cuota alimentaria: cómo se reclama',b:['La cuota alimentaria cubre las necesidades de hijas e hijos: alimentación, educación, salud, vivienda y esparcimiento.','Se puede intentar primero un acuerdo y, si no es posible, iniciar el reclamo correspondiente.','Te acompañamos en cada paso para que se respeten los derechos de tus hijos.']}
   ];
   const md=$('#modal'); let actual=null;
-  $$('.nc').forEach(b=>b.addEventListener('click',()=>{ actual=N[b.dataset.n]; $('#mCat').textContent=actual.c+' · Ejemplo'; $('#mT').textContent=actual.t; $('#mB').innerHTML=actual.b.map(p=>'<p>'+p+'</p>').join(''); md.classList.add('open'); }));
+  $$('.nrow').forEach(b=>b.addEventListener('click',()=>{ actual=N[b.dataset.n]; $('#mCat').textContent=actual.c+' · Ejemplo'; $('#mT').textContent=actual.t; $('#mB').innerHTML=actual.b.map(p=>'<p>'+p+'</p>').join(''); md.classList.add('open'); }));
   $('#mW').addEventListener('click',e=>{ e.preventDefault(); abrir('Hola Dra.! Leí la nota "'+(actual?actual.t:'')+'" y quisiera consultar.'); });
   md.addEventListener('click',e=>{ if(e.target===md||e.target.closest('[data-close]')) md.classList.remove('open'); });
   addEventListener('keydown',e=>{ if(e.key==='Escape'){ md.classList.remove('open'); closeSheet(); } });
