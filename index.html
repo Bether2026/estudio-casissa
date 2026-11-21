@@ -406,6 +406,90 @@ footer .by a{color:var(--gold-2);text-decoration:underline}
   .area .ic3d{width:60px;height:60px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.line>span{transform:none}.seal svg.scale .draw{stroke-dashoffset:0}}
+
+/* ══ Test "¿Tenés un caso?" ══ */
+@media (min-width:961px){.trust{flex-wrap:nowrap;gap:18px 20px;font-size:.84rem}}
+@media (max-width:520px){.ctas{display:grid;grid-template-columns:1fr}.ctas .btn{width:100%}}
+@keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(236,213,159,.7)}70%{box-shadow:0 0 0 10px rgba(236,213,159,0)}100%{box-shadow:0 0 0 0 rgba(236,213,159,0)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes popIn{from{opacity:0;transform:translateY(10px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes dots{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+@keyframes sheen2{0%{background-position:-150% 0}100%{background-position:250% 0}}
+nav.menu a.hot{display:inline-flex;align-items:center;gap:8px;color:var(--gold-2)}
+nav.menu a.hot::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold-2);animation:pulseDot 1.8s infinite}
+.sheet a.hot{color:var(--gold-2)}
+.sheet a.hot em{font-style:normal;font-size:.7rem;font-weight:800;letter-spacing:.14em;margin-left:10px;padding:4px 9px;border-radius:999px;background:var(--gold);color:var(--ink);vertical-align:middle}
+.btn-test{position:relative;background:linear-gradient(110deg,#1d1914 0%,#1d1914 40%,#3a2f1f 50%,#1d1914 60%,#1d1914 100%);background-size:250% 100%;animation:sheen2 3.5s ease-in-out infinite;border:1px solid var(--gold);color:var(--gold-2)}
+.btn-test .nw{font-size:.62rem;font-weight:900;letter-spacing:.14em;padding:3px 7px;border-radius:999px;background:var(--gold);color:var(--ink)}
+
+/* promo en inicio */
+.qpromo{position:relative;z-index:2;padding:0 0 10px}
+.qcard{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,50px);align-items:center;padding:clamp(28px,4.5vw,54px);border-radius:32px;overflow:hidden;
+  background:radial-gradient(55% 90% at 100% 0,rgba(201,164,92,.3),transparent 65%),radial-gradient(50% 70% at 0 100%,rgba(201,164,92,.12),transparent 70%),linear-gradient(150deg,#211b13,#0f0d0b 70%);
+  border:1px solid rgba(216,184,120,.45);box-shadow:0 40px 90px -40px #000,inset 0 1px 0 rgba(255,240,200,.12)}
+.qcard::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:linear-gradient(120deg,transparent 30%,rgba(255,236,190,.9) 50%,transparent 70%);background-size:250% 100%;animation:sheen2 5s linear infinite;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.qbadge{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 12px;border-radius:999px;background:rgba(201,164,92,.16);border:1px solid rgba(216,184,120,.5);font-size:.72rem;font-weight:800;letter-spacing:.2em;color:var(--gold-2)}
+.qbadge i{width:9px;height:9px;border-radius:50%;background:var(--gold-2);animation:pulseDot 1.6s infinite}
+.qcard h2{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,4.6vw,3.3rem);line-height:1.04;margin-top:18px}
+.qcard p.l{color:#d9d1c2;font-size:1.05rem;margin-top:14px;max-width:520px}
+.qcard .qmeta{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:20px;font-size:.84rem;font-weight:700;color:var(--muted)}
+.qcard .qmeta span::before{content:"✓ ";color:var(--gold-2)}
+.qcard .btn{margin-top:26px;font-size:1rem;padding:17px 30px}
+.qprev{position:relative;padding:22px;border-radius:26px;background:rgba(11,10,9,.65);border:1px solid var(--line);backdrop-filter:blur(8px);animation:floaty 6s ease-in-out infinite;min-height:290px}
+.qprev .b{max-width:85%;padding:12px 16px;border-radius:18px 18px 18px 6px;background:#1f1b16;border:1px solid var(--line);font-size:.92rem;margin-bottom:10px;opacity:0;animation:popIn .5s forwards}
+.qprev .b.u{margin-left:auto;border-radius:18px 18px 6px 18px;background:linear-gradient(135deg,#efd9a4,#c9a45c);color:var(--ink);font-weight:700;border:0}
+.qprev .b:nth-child(1){animation-delay:.3s}.qprev .b:nth-child(2){animation-delay:1.1s}.qprev .b:nth-child(3){animation-delay:1.9s}.qprev .b:nth-child(4){animation-delay:2.7s}
+.qprev .res{margin-top:6px;padding:14px 16px;border-radius:16px;border:1px dashed rgba(216,184,120,.6);color:var(--gold-2);font-weight:800;font-size:.9rem;opacity:0;animation:popIn .5s 3.5s forwards}
+
+/* sección del test */
+.quiz{max-width:760px;margin:0 auto;border-radius:30px;overflow:hidden;border:1px solid rgba(216,184,120,.4);background:linear-gradient(170deg,#191511,#0e0c0a);box-shadow:0 50px 100px -50px #000}
+.quiz .qh{display:flex;align-items:center;gap:14px;padding:18px 22px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.02)}
+.quiz .av{flex:none;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-weight:600;color:var(--ink);background:radial-gradient(circle at 35% 30%,#fff3cf,#e6c27a 40%,#a8813f);box-shadow:0 6px 16px -6px rgba(201,164,92,.8)}
+.quiz .qh b{display:block;font-size:.98rem}
+.quiz .qh small{display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--muted)}
+.quiz .qh small::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--wa)}
+.quiz .qh .rs{margin-left:auto;font-size:.8rem;font-weight:700;color:var(--muted);border:1px solid var(--line);padding:8px 14px;border-radius:999px}
+.quiz .qh .rs:hover{color:var(--gold-2);border-color:var(--gold)}
+.quiz .pb{height:4px;background:rgba(255,255,255,.06)}.quiz .pb i{display:block;height:100%;width:0;background:linear-gradient(90deg,#c9a45c,#ecd59f);transition:width .6s var(--ease);box-shadow:0 0 12px rgba(236,213,159,.6)}
+.chat{padding:24px 22px 10px;min-height:440px;max-height:68vh;overflow-y:auto;scroll-behavior:smooth}
+.msg{display:flex;gap:10px;align-items:flex-end;margin-bottom:12px;animation:popIn .45s var(--ease) both}
+.msg .bb{max-width:82%;padding:13px 17px;border-radius:20px 20px 20px 6px;background:#221d17;border:1px solid var(--line);font-size:.97rem;line-height:1.5}
+.msg.me{justify-content:flex-end}.msg.me .bb{border-radius:20px 20px 6px 20px;background:linear-gradient(135deg,#efd9a4,#c9a45c);color:var(--ink);font-weight:700;border:0}
+.msg .mini{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:.72rem;font-weight:700;color:var(--ink);background:radial-gradient(circle at 35% 30%,#fff3cf,#e6c27a 40%,#a8813f)}
+.typing .bb{display:flex;gap:5px;padding:16px 18px}.typing .bb i{width:7px;height:7px;border-radius:50%;background:var(--gold-2);animation:dots 1s infinite}.typing .bb i:nth-child(2){animation-delay:.15s}.typing .bb i:nth-child(3){animation-delay:.3s}
+.opts{display:flex;flex-wrap:wrap;gap:10px;padding:6px 0 18px 40px}
+.opts button{padding:12px 18px;border-radius:999px;border:1px solid rgba(216,184,120,.45);background:rgba(201,164,92,.07);color:var(--cream);font:700 .92rem var(--sans);cursor:pointer;opacity:0;animation:popIn .4s var(--ease) forwards;transition:background .2s,border-color .2s,transform .2s}
+.opts button:hover{background:rgba(201,164,92,.2);border-color:var(--gold-2);transform:translateY(-2px)}
+.opts.big{display:grid;grid-template-columns:1fr 1fr;padding-left:40px}
+.opts.big button{display:flex;align-items:center;gap:12px;text-align:left;border-radius:18px;padding:14px 16px}
+.opts.big button span{font-size:1.4rem}
+.res-card{margin:6px 0 20px 40px;padding:24px;border-radius:24px;border:1px solid rgba(216,184,120,.55);background:radial-gradient(70% 90% at 100% 0,rgba(201,164,92,.22),transparent 65%),#16130f;animation:popIn .6s var(--ease) both;position:relative;overflow:hidden}
+.res-card .ok{display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:800;letter-spacing:.2em;color:var(--gold-2)}
+.res-card h3{font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,3.4vw,2rem);line-height:1.1;margin-top:10px}
+.res-card ul{list-style:none;display:grid;gap:10px;margin-top:16px}
+.res-card li{display:flex;gap:12px;font-size:.96rem;line-height:1.45;color:#e7dfd0}
+.res-card li::before{content:"";flex:none;width:9px;height:9px;margin-top:7px;transform:rotate(45deg);background:linear-gradient(135deg,#ecd59f,#9b7a3c)}
+.res-card .warn{margin-top:14px;padding:12px 14px;border-radius:14px;background:rgba(229,72,77,.1);border:1px solid rgba(229,72,77,.35);font-size:.9rem;color:#ffd0d0}
+.res-card .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.res-card .disc{margin-top:14px;font-size:.76rem;color:var(--muted)}
+.spark{position:absolute;width:8px;height:8px;border-radius:2px;background:var(--gold-2);pointer-events:none;animation:fall 1.4s ease-out forwards}
+@keyframes fall{from{opacity:1;transform:translate(0,0) rotate(0)}to{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(260deg)}}
+.free{display:flex;gap:10px;padding:0 0 18px 40px}
+.free textarea{flex:1;min-height:70px;padding:12px 14px;border-radius:16px;border:1px solid var(--line);background:#0d0c0a;color:var(--cream);font:500 .95rem var(--sans);resize:vertical}
+
+/* aviso flotante */
+.qtoast{position:fixed;right:24px;bottom:100px;z-index:61;max-width:290px;display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:18px;background:linear-gradient(150deg,#241d14,#13100d);border:1px solid rgba(216,184,120,.55);box-shadow:0 24px 50px -16px #000;cursor:pointer;opacity:0;transform:translateY(16px) scale(.95);pointer-events:none;transition:all .5s var(--ease)}
+.qtoast.on{opacity:1;transform:none;pointer-events:auto}
+.qtoast .av{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-weight:700;color:var(--ink);background:radial-gradient(circle at 35% 30%,#fff3cf,#e6c27a 40%,#a8813f)}
+.qtoast b{display:block;font-size:.92rem}.qtoast small{display:block;font-size:.8rem;color:var(--gold-2);margin-top:2px;font-weight:700}
+.qtoast .x{position:absolute;top:-10px;right:-10px;width:26px;height:26px;border-radius:50%;background:#2a241c;border:1px solid var(--line);color:var(--muted);font-size:.9rem;display:grid;place-items:center;cursor:pointer}
+@media (max-width:960px){
+  .qcard{grid-template-columns:1fr}.qprev{min-height:0}
+  .qtoast{left:12px;right:12px;max-width:none;bottom:calc(96px + env(safe-area-inset-bottom))}
+  .opts{padding-left:0}.opts.big{grid-template-columns:1fr;padding-left:0}.res-card{margin-left:0}.free{padding-left:0}
+  .chat{padding:18px 14px 6px;max-height:none;min-height:380px}
+}
 </style>
 </head>
 <body>
@@ -416,7 +500,7 @@ footer .by a{color:var(--gold-2);text-decoration:underline}
   <div class="wrap bar">
     <a href="#/inicio" class="brand"><span class="mono">AC</span><span><b>Dra. Andrea G. de Casissa</b><small>Estudio Jurídico</small></span></a>
     <nav class="menu" aria-label="Secciones">
-      <a href="#/inicio">Inicio</a><a href="#/areas">Áreas</a><a href="#/calculadora">Calculadora</a><a href="#/estudio" class="opt">El estudio</a><a href="#/novedades">Novedades</a><a href="#/contacto">Contacto</a>
+      <a href="#/inicio">Inicio</a><a href="#/test" class="hot">¿Tenés un caso?</a><a href="#/areas">Áreas</a><a href="#/calculadora" class="opt">Calculadora</a><a href="#/estudio" class="opt">El estudio</a><a href="#/novedades">Novedades</a><a href="#/contacto">Contacto</a>
     </nav>
     <a href="#/contacto" class="btn btn-gold">Consultá tu caso</a>
     <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><span></span></button>
@@ -425,6 +509,7 @@ footer .by a{color:var(--gold-2);text-decoration:underline}
 
 <nav class="sheet" id="sheet" aria-label="Menú">
   <a href="#/inicio"><small>00</small>Inicio</a>
+  <a href="#/test" class="hot"><small>★</small>¿Tenés un caso?<em>TEST</em></a>
   <a href="#/areas"><small>01</small>Áreas de práctica</a>
   <a href="#/calculadora"><small>02</small>Calculadora</a>
   <a href="#/estudio"><small>03</small>El estudio</a>
@@ -451,7 +536,7 @@ footer .by a{color:var(--gold-2);text-decoration:underline}
         <p class="lead rv d2">Derecho laboral, familia, penal, accidentes de tránsito y sucesiones en Florencio Varela. Atención personalizada en dos sedes, por WhatsApp o videollamada, con un trato claro y cercano en cada etapa de tu caso.</p>
         <div class="ctas rv d3">
           <a class="btn btn-gold" href="#" data-wa="Hola Dra.! Quisiera hacer una consulta sobre mi caso."><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"/></svg>Consultá tu caso</a>
-          <a class="btn btn-line" href="#/areas">Áreas de práctica</a>
+          <a class="btn btn-test" href="#/test"><span class="nw">TEST</span>¿Tenés un caso?</a>
         </div>
         <div class="trust rv d4">
           <span><i class="ic3d xs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></i>Confidencialidad</span>
@@ -483,6 +568,24 @@ footer .by a{color:var(--gold-2);text-decoration:underline}
       </div>
     </div>
   </section>
+  <section class="qpromo"><div class="wrap">
+    <a class="qcard rv" href="#/test">
+      <div>
+        <span class="qbadge"><i></i>TEST GRATIS · 1 MINUTO</span>
+        <h2>¿Tenés un caso?<br><span class="gold">Averigualo ahora.</span></h2>
+        <p class="l">Respondé unas pocas preguntas y enterate qué podrías reclamar. Sin vueltas, sin compromiso y desde tu celular.</p>
+        <div class="qmeta"><span>Despidos</span><span>Accidentes</span><span>Familia</span><span>Sucesiones</span><span>Penal</span></div>
+        <span class="btn btn-gold">Hacer el test →</span>
+      </div>
+      <div class="qprev" aria-hidden="true">
+        <div class="b">¿Qué te pasó? 👋</div>
+        <div class="b u">Me despidieron 💼</div>
+        <div class="b">¿Cuánto tiempo trabajaste ahí?</div>
+        <div class="b u">Más de 5 años</div>
+        <div class="res">✓ Podrías reclamar indemnización, preaviso y más</div>
+      </div>
+    </a>
+  </div></section>
   <section class="sec">
     <div class="wrap">
       <span class="eyebrow rv">Explorá el estudio</span>
@@ -497,6 +600,24 @@ footer .by a{color:var(--gold-2);text-decoration:underline}
       <div class="cband rv" data-cb="general"></div>
     </div>
   </section>
+</div>
+
+<!-- ══════════ TEST ══════════ -->
+<div class="view" id="v-test" data-t="¿Tenés un caso?">
+  <section class="page-hero"><span class="num">★</span><div class="wrap">
+    <div class="crumb"><a href="#/inicio">Inicio</a><span>/</span><span>¿Tenés un caso?</span></div>
+    <span class="eyebrow">Test gratis · 1 minuto</span>
+    <h2 class="h2"><span class="line"><span>¿Tenés un caso?</span></span><span class="line"><span class="gold">Averigualo ahora</span></span></h2>
+    <p class="lead rv">Respondé unas preguntas simples y te contamos qué podrías reclamar. Es orientativo y confidencial: nada se guarda.</p>
+  </div></section>
+  <section class="sec" style="padding-top:0"><div class="wrap">
+    <div class="quiz rv">
+      <div class="qh"><span class="av">AC</span><span><b>Asistente del Estudio</b><small>En línea · responde al instante</small></span><button class="rs" id="qReset" type="button">↺ Empezar de nuevo</button></div>
+      <div class="pb"><i id="qBar"></i></div>
+      <div class="chat" id="qChat" aria-live="polite"></div>
+    </div>
+    <div class="cband rv" data-cb="test"></div>
+  </div></section>
 </div>
 
 <!-- ══════════ ÁREAS ══════════ -->
@@ -662,6 +783,7 @@ footer .by a{color:var(--gold-2);text-decoration:underline}
 </footer>
 
 <nav class="mbar" aria-label="Contacto rápido"><a class="call" href="tel:+5491166382751"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-tel"/></svg>Llamar</a><a class="w" href="#" data-wa="Hola Dra.! Quisiera hacer una consulta."><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"/></svg>WhatsApp</a></nav>
+<div class="qtoast" id="qToast" role="button" tabindex="0"><span class="av">AC</span><span><b>¿Tenés un caso?</b><small>Averigualo en 1 minuto →</small></span><button class="x" type="button" aria-label="Cerrar">×</button></div>
 <a class="wa" href="#" data-wa="Hola Dra.! Quisiera hacer una consulta." aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"/></svg></a>
 
 <div class="modal" id="modal" role="dialog" aria-modal="true"><div class="box"><button class="x" data-close aria-label="Cerrar">×</button><small id="mCat"></small><h3 id="mT"></h3><div id="mB"></div><p class="tip">Información orientativa. Cada caso es particular: consultá con la Dra. para recibir asesoramiento sobre tu situación.</p><a class="btn btn-gold" href="#" id="mW"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"/></svg>Consultar sobre este tema</a></div></div>
@@ -685,6 +807,7 @@ footer .by a{color:var(--gold-2);text-decoration:underline}
     areas:{t:'¿Tu caso es de alguna de estas áreas?',p:'Escribinos y te decimos cómo seguir. Todo es confidencial.',m:'Quisiera consultar por mi caso.',n:['#/calculadora','Siguiente: calculadora']},
     calculadora:{t:'¿Querés el cálculo completo?',p:'Preaviso, vacaciones, aguinaldo, multas: revisamos todo lo que te corresponde.',m:'Me despidieron y quisiera el cálculo completo de mi indemnización.',n:['#/estudio','Siguiente: el estudio']},
     estudio:{t:'Hablemos de tu caso',p:'Coordinamos una entrevista para escucharte y explicarte tus opciones.',m:'Quisiera coordinar una entrevista.',n:['#/novedades','Siguiente: novedades']},
+    test:{t:'¿Preferís contarlo directamente?',p:'Escribinos con tus palabras y te respondemos. Todo es confidencial.',m:'Quisiera consultar por mi caso.',n:['#/areas','Ver áreas de práctica']},
     novedades:{t:'¿Te quedó alguna duda?',p:'Cada caso es distinto. Consultanos y te respondemos a la brevedad.',m:'Leí una novedad y quisiera consultar.',n:['#/contacto','Ir a contacto']}
   };
   $$('.cband').forEach((el,i)=>{
@@ -703,7 +826,7 @@ footer .by a{color:var(--gold-2);text-decoration:underline}
   $$('.rv').forEach(el=>io.observe(el));
 
   /* ── Navegación por secciones con transición ── */
-  const order=['inicio','areas','calculadora','estudio','novedades','contacto'];
+  const order=['inicio','test','areas','calculadora','estudio','novedades','contacto'];
   const view=id=>document.getElementById('v-'+id);
   const veil=$('#veil'); let now='inicio', busy=false;
   const mark=id=>$$('nav.menu a, .sheet a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#/'+id));
@@ -721,6 +844,145 @@ footer .by a{color:var(--gold-2);text-decoration:underline}
   const route=()=>location.hash.replace(/^#\/?/,'')||'inicio';
   addEventListener('hashchange',()=>go(route()));
   if(route()!=='inicio') swap(view(route())?route():'inicio'); else { mark('inicio'); document.body.classList.add('home'); }
+
+
+  /* ── Test "¿Tenés un caso?" ── */
+  (()=>{
+    const chat=$('#qChat'), bar=$('#qBar'); if(!chat) return;
+    const T={
+      inicio:{q:['¡Hola! 👋 Soy el asistente del Estudio de la Dra. Casissa.','En 1 minuto te ayudo a saber si tu situación puede tener solución. ¿Qué te pasó?'],big:true,key:'Tema',o:[
+        ['💼','Me despidieron o tengo un problema en el trabajo','laboral'],['🚗','Tuve un accidente de tránsito','transito'],['👨‍👩‍👧','Un tema de familia','familia'],['📜','Una herencia o sucesión','sucesion'],['⚖️','Una denuncia o un delito','penal'],['💬','Otra cosa','otro']]},
+      laboral:[
+        {k:'Situación',q:'¿Cuál se parece más a lo que te pasa?',o:['Me despidieron','Trabajo en negro o mal registrado','Me deben sueldos u horas extra','Tuve un accidente o enfermedad por el trabajo']},
+        {k:'Antigüedad',q:'¿Cuánto tiempo trabajaste (o trabajás) ahí?',o:['Menos de 3 meses','Entre 3 meses y 1 año','Entre 1 y 5 años','Más de 5 años']},
+        {k:'Registración',q:'¿Estabas registrado, en blanco?',o:['Sí, todo en blanco','Una parte en negro','No, todo en negro','No sé']},
+        {k:'Papeles',q:'Última: ¿firmaste algo o te llegó un telegrama?',o:['Sí, firmé algo','Recibí un telegrama o carta documento','No, nada todavía']}],
+      transito:[
+        {k:'Cómo estaba',q:'¿Cómo estabas en el accidente?',o:['Manejando un auto','En moto o bicicleta','Como peatón','Como pasajero (colectivo, remis, auto)']},
+        {k:'Lesiones',q:'¿Hubo lesiones?',o:['Sí, tuve lesiones','Solo daños materiales','No estoy seguro']},
+        {k:'Cuándo',q:'¿Hace cuánto fue?',o:['Menos de 1 mes','Entre 1 mes y 1 año','Entre 1 y 3 años','Más de 3 años']},
+        {k:'Denuncia',q:'Última: ¿hiciste la denuncia?',o:['Sí, a la policía y/o al seguro','Solo al seguro','Todavía no']}],
+      familia:[
+        {k:'Necesita',q:'¿Qué necesitás resolver?',o:['Divorcio','Cuota alimentaria','Ver a mis hijos (régimen de comunicación)','Cuidado personal de los hijos','Violencia familiar','Otro tema de familia']},
+        {k:'Hijos menores',q:'¿Hay hijos menores involucrados?',o:['Sí','No']},
+        {k:'Estado',q:'Última: ¿ya hay algo acordado o iniciado?',o:['Nada todavía','Hay un acuerdo de palabra','Ya hay un juicio iniciado']}],
+      sucesion:[
+        {k:'Relación',q:'¿Qué relación tenías con la persona que falleció?',o:['Hijo/a','Cónyuge o pareja','Padre o madre','Hermano/a u otro familiar']},
+        {k:'Bienes',q:'¿Dejó bienes?',o:['Casa o terreno','Auto','Dinero en el banco','Varias cosas','No sé']},
+        {k:'Testamento',q:'Última: ¿hay testamento?',o:['Sí','No','No sé']}],
+      penal:[
+        {k:'Situación',q:'¿Cuál es tu situación?',o:['Me denunciaron o estoy imputado','Detuvieron a un familiar','Fui víctima de un delito']},
+        {k:'Urgencia',q:'Última: ¿es urgente?',o:['Sí, es urgente','Puedo esperar unos días']}],
+      otro:[{k:'Consulta',q:'Contame en pocas palabras qué te pasa y lo vemos juntos.',free:true}]
+    };
+    let tema=null, paso=0, resp=[], timer=[];
+    const wait=ms=>new Promise(res=>timer.push(setTimeout(res,ms)));
+    const down=()=>{ chat.scrollTop=chat.scrollHeight; };
+    const add=(html,me)=>{ const d=document.createElement('div'); d.className='msg'+(me?' me':''); d.innerHTML=(me?'':'<span class="mini">AC</span>')+'<div class="bb">'+html+'</div>'; chat.appendChild(d); down(); return d; };
+    async function bot(t){ const ty=add('<i></i><i></i><i></i>'); ty.classList.add('typing'); await wait(reduce?0:650); ty.remove(); add(t); }
+    const total=()=>tema?T[tema].length:4;
+    const prog=()=>{ bar.style.width=(tema?Math.round(paso/total()*100):4)+'%'; };
+    function opciones(list,big,cb){
+      const box=document.createElement('div'); box.className='opts'+(big?' big':'');
+      list.forEach((o,i)=>{ const b=document.createElement('button'); b.type='button'; b.style.animationDelay=(i*70)+'ms';
+        b.innerHTML=Array.isArray(o)?'<span>'+o[0]+'</span>'+o[1]:o;
+        b.onclick=()=>{ box.remove(); cb(o); }; box.appendChild(b); });
+      chat.appendChild(box); down();
+    }
+    async function start(){
+      timer.forEach(clearTimeout); timer=[]; chat.innerHTML=''; tema=null; paso=0; resp=[]; prog();
+      for(const t of T.inicio.q) await bot(t);
+      opciones(T.inicio.o,true,async o=>{ add(o[0]+' '+o[1],true); tema=o[2]; resp.push(['Tema',o[1]]); await bot(['Perfecto, vamos con eso. 👌','Entiendo, te ayudo.','Muy bien, contame un poco más.'][Math.floor(Math.random()*3)]); preguntar(); });
+    }
+    async function preguntar(){
+      prog();
+      const p=T[tema][paso]; if(!p){ return resultado(); }
+      await bot(p.q);
+      if(p.free){
+        const f=document.createElement('div'); f.className='free'; f.innerHTML='<textarea placeholder="Escribí acá…"></textarea><button class="btn btn-gold" type="button">Listo</button>';
+        chat.appendChild(f); down(); const ta=f.querySelector('textarea'); ta.focus({preventScroll:true});
+        f.querySelector('button').onclick=()=>{ const v=ta.value.trim(); if(!v){ ta.focus(); return; } f.remove(); add(v.replace(/[<>]/g,''),true); resp.push([p.k,v]); paso++; preguntar(); };
+        return;
+      }
+      opciones(p.o,false,o=>{ add(o,true); resp.push([p.k,o]); paso++; preguntar(); });
+    }
+    const R=k=>(resp.find(x=>x[0]===k)||[])[1]||'';
+    function armar(){
+      const L=[], W=[]; let titulo='Tu situación puede tener solución', extra='';
+      if(tema==='laboral'){
+        const s=R('Situación'), reg=R('Registración'), pap=R('Papeles'), ant=R('Antigüedad');
+        if(s==='Me despidieron'){ L.push('Podrías reclamar la indemnización por antigüedad, el preaviso y la integración del mes.'); L.push('También vacaciones y aguinaldo proporcionales, y otros rubros según tu caso.'); extra='<a class="btn btn-line" href="#/calculadora">Calcular mi indemnización</a>'; }
+        if(s==='Trabajo en negro o mal registrado'||/negro/.test(reg)) L.push('Trabajar sin registrar o mal registrado te da derecho a reclamar que se reconozca tu relación laboral y las diferencias que te correspondan.');
+        if(s==='Me deben sueldos u horas extra') L.push('Podés intimar el pago de lo que te deben. Si no te pagan, según el caso podrías considerarte despedido y reclamar la indemnización.');
+        if(s==='Tuve un accidente o enfermedad por el trabajo') L.push('Podrías reclamar las prestaciones de la ART y, según el caso, una indemnización por la incapacidad.');
+        if(ant==='Más de 5 años'||ant==='Entre 1 y 5 años') L.push('Tu antigüedad es un dato importante: pesa mucho en lo que te corresponde.');
+        if(pap==='Sí, firmé algo') W.push('Ojo: lo que firmaste puede ser clave. Traé una copia a la consulta y no firmes nada más sin asesorarte.');
+        if(/telegrama/.test(pap)) W.push('Los telegramas y cartas documento tienen plazos para responder: conviene asesorarte cuanto antes.');
+        titulo='Tu caso laboral merece ser revisado';
+      }
+      if(tema==='transito'){
+        const c=R('Cómo estaba'), l=R('Lesiones'), w=R('Cuándo'), d=R('Denuncia');
+        L.push('Podrías reclamar los daños del vehículo, los gastos médicos y otros perjuicios.');
+        if(l==='Sí, tuve lesiones') L.push('Si tuviste lesiones, también podrías reclamar una indemnización por ellas.');
+        if(/peatón|pasajero/.test(c)) L.push('Como peatón o pasajero, en general estás en una buena posición para reclamar.');
+        if(/moto/.test(c)) L.push('En moto o bicicleta las lesiones suelen ser importantes: guardá todos los estudios y certificados.');
+        if(w==='Más de 3 años') W.push('Pasó bastante tiempo y los reclamos tienen plazos: consultanos ya para saber si todavía estás a tiempo.');
+        if(d==='Todavía no') W.push('Conviene hacer la denuncia cuanto antes. Te podemos orientar.');
+        titulo='Podrías tener derecho a un reclamo';
+      }
+      if(tema==='familia'){
+        const n=R('Necesita');
+        const M={'Divorcio':'El divorcio se puede pedir aunque la otra persona no esté de acuerdo. Te acompañamos en todo el proceso.','Cuota alimentaria':'Los hijos tienen derecho a una cuota alimentaria. Se puede pedir, aumentar o reclamar si no se cumple.','Ver a mis hijos (régimen de comunicación)':'Tenés derecho a mantener el vínculo con tus hijos. Se puede acordar o pedir un régimen de comunicación.','Cuidado personal de los hijos':'El cuidado de los hijos se puede acordar o definir judicialmente, siempre pensando en su bienestar.','Violencia familiar':'Existen medidas de protección rápidas para vos y tu familia.','Otro tema de familia':'Contanos tu situación y te explicamos las opciones.'};
+        L.push(M[n]||M['Otro tema de familia']);
+        if(R('Hijos menores')==='Sí') L.push('Cuando hay hijos menores, todo se resuelve priorizando su bienestar.');
+        if(R('Estado')==='Ya hay un juicio iniciado') L.push('Si ya hay un juicio, revisamos en qué etapa está y cómo seguir.');
+        if(n==='Violencia familiar') W.push('Si estás en peligro ahora, llamá al 911. También podés comunicarte gratis con la Línea 144, las 24 horas.');
+        titulo='Hay un camino para resolverlo';
+      }
+      if(tema==='sucesion'){
+        L.push('Como '+(R('Relación')||'familiar').toLowerCase()+', podrías ser heredero/a.');
+        L.push('Para poner los bienes a nombre de los herederos hay que iniciar la sucesión.');
+        if(R('Testamento')==='Sí') L.push('Si hay testamento, lo revisamos para ver cómo se reparten los bienes.');
+        if(/Casa|Varias/.test(R('Bienes'))) L.push('Si hay una casa o un terreno, la sucesión es necesaria para poder venderlo o escriturarlo.');
+        titulo='Te ayudamos con la sucesión';
+      }
+      if(tema==='penal'){
+        const st=R('Situación');
+        if(/denunciaron/.test(st)) L.push('Tenés derecho a una defensa desde el primer momento. No declares sin un abogado.');
+        if(/familiar/.test(st)) L.push('Podemos intervenir para conocer la situación de tu familiar y pedir lo que corresponda.');
+        if(/víctima/.test(st)) L.push('Como víctima podés participar del proceso y reclamar por los daños sufridos.');
+        if(R('Urgencia')==='Sí, es urgente') W.push('Es urgente: escribinos ahora por WhatsApp y te respondemos lo antes posible.');
+        titulo='Necesitás asesoramiento ya';
+      }
+      if(tema==='otro'){ L.push('Con lo que nos contaste, la Dra. puede orientarte sobre los pasos a seguir.'); titulo='Contale tu caso a la Dra.'; }
+      return {titulo,L,W,extra};
+    }
+    function chispas(el){ if(reduce) return; for(let i=0;i<22;i++){ const s=document.createElement('i'); s.className='spark'; s.style.left='50%'; s.style.top='20%';
+      s.style.setProperty('--dx',(Math.random()*360-180)+'px'); s.style.setProperty('--dy',(Math.random()*220-40)+'px'); s.style.background=['#ecd59f','#c9a45c','#fff3cf'][i%3]; el.appendChild(s); setTimeout(()=>s.remove(),1500); } }
+    async function resultado(){
+      bar.style.width='100%';
+      await bot('¡Listo! Ya tengo tu resultado... ✨');
+      const {titulo,L,W,extra}=armar();
+      const msg='Hola Dra.! Hice el test de la web:\n'+resp.map(([k,v])=>'• '+k+': '+v).join('\n')+'\n¿Podemos hablar de mi caso?';
+      const c=document.createElement('div'); c.className='res-card';
+      c.innerHTML='<span class="ok">✓ RESULTADO</span><h3>'+titulo+'</h3><ul>'+L.map(x=>'<li>'+x+'</li>').join('')+'</ul>'+W.map(x=>'<div class="warn">⚠️ '+x+'</div>').join('')
+        +'<div class="acts"><a class="btn btn-wa" href="#" data-wa="'+msg.replace(/"/g,'&quot;')+'"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"/></svg>Contarle mi caso a la Dra.</a>'+extra+'</div>'
+        +'<p class="disc">Resultado orientativo y general: no reemplaza una consulta. Cada caso es particular.</p>';
+      chat.appendChild(c); chispas(c); down();
+    }
+    $('#qReset').onclick=start;
+    let iniciado=false;
+    const obs=new MutationObserver(()=>{ if($('#v-test').classList.contains('on')&&!iniciado){ iniciado=true; start(); } });
+    obs.observe($('#v-test'),{attributes:true,attributeFilter:['class']});
+    if($('#v-test').classList.contains('on')){ iniciado=true; start(); }
+
+    /* aviso flotante (una vez por visita) */
+    const toast=$('#qToast'); let visto=false; try{ visto=sessionStorage.getItem('qToast')==='1'; }catch(e){}
+    const cerrar=()=>{ toast.classList.remove('on'); try{ sessionStorage.setItem('qToast','1'); }catch(e){} };
+    if(!visto) setTimeout(()=>{ if(!$('#v-test').classList.contains('on')) toast.classList.add('on'); },7000);
+    toast.addEventListener('click',e=>{ if(e.target.closest('.x')){ e.stopPropagation(); cerrar(); return; } cerrar(); location.hash='#/test'; });
+    addEventListener('hashchange',()=>{ if(location.hash==='#/test') cerrar(); });
+  })();
 
   /* ── Menú celu ── */
   const sheet=$('#sheet'), bg=$('#burger');
